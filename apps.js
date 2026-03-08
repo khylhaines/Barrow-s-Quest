@@ -1498,17 +1498,10 @@ function boot() {
     wireAR();
     initMap();
     wireModes();
-    save();
-    ensureRewardLayer();
-    speak(voiceLine("welcome"));
-    console.log("Barrow Quest booted");
-  } catch (err) {
-    console.error("Boot error:", err);
-    if ($("capture-hud"))
-      $("capture-hud").innerText = "BOOT ERROR — check console";
-  }
+    save(); 
 }
 
 window.addEventListener("DOMContentLoaded", boot);
+
 
 
