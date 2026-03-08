@@ -1,4 +1,3 @@
-
 // qa.js
 import { PINS } from "./pins.js";
 
