@@ -599,14 +599,26 @@ function initPins() {
   Object.values(activeMarkers).forEach((m) => map.removeLayer(m));
   activeMarkers = {};
 
-  PINS.forEach((p) => {
+  getVisiblePins().forEach((p) => {
     if (!isOnCooldown(p.id)) {
+      const pinHtml =
+        typeof p.i === "string" && p.i.trim().startsWith("<")
+          ? p.i
+          : `<div style="font-size:28px;line-height:1;">${p.i || "📍"}</div>`;
+
       const m = L.marker(p.l, {
-        icon: L.divIcon({ className: "marker-logo", html: p.i }),
+        icon: L.divIcon({
+          className: "marker-logo",
+          html: pinHtml,
+          iconSize: [46, 46],
+          iconAnchor: [23, 23],
+        }),
       }).addTo(map);
+
       activeMarkers[p.id] = m;
     }
   });
+}
 
   save();
 }
@@ -1491,3 +1503,4 @@ function boot() {
 }
 
 window.addEventListener("DOMContentLoaded", boot);
+
