@@ -10,6 +10,8 @@
     <meta name="theme-color" content="#000000" />
     <title>Barrow Quest: Elite Master Hub</title>
 
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -884,7 +886,14 @@
       if (startClose) startClose.addEventListener("click", hideStart);
       if (startCloseX) startCloseX.addEventListener("click", hideStart);
       if (startBtn) startBtn.addEventListener("click", hideStart);
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./service-worker.js")
+            .catch((err) => console.error("SW registration failed:", err));
+        });
+      }
     </script>
   </body>
 </html>
-
