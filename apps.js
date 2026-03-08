@@ -590,7 +590,14 @@ function initMap() {
 function refreshHeroIcon() {
   if (!hero) return;
   const c = getCharacter();
-  hero.setIcon(L.divIcon({ html: c.iconHtml, className: "marker-logo" }));
+  hero.setIcon(
+    L.divIcon({
+      className: "marker-logo",
+      html: c.iconHtml,
+      iconSize: [48, 48],
+      iconAnchor: [24, 24],
+    })
+  );
 }
 
 function initPins() {
@@ -1503,4 +1510,5 @@ function boot() {
 }
 
 window.addEventListener("DOMContentLoaded", boot);
+
 
