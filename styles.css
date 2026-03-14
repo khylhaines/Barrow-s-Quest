@@ -1,0 +1,297 @@
+:root {
+  --gold: #ffd700;
+  --kylan: #4aa3ff;
+  --piper: #ff8acb;
+  --parent: #9cff6b;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000;
+  font-family: system-ui, Arial, sans-serif;
+  color: #fff;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* ================================
+HUD COINS
+================================ */
+
+#coin-hud {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 5000;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+}
+
+/* ================================
+BOTTOM HUD
+================================ */
+
+.hud-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 14px 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 5000;
+}
+
+.hud-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 14px 18px;
+  font-size: 22px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* ================================
+ACTION BUTTON
+================================ */
+
+#action-trigger {
+  position: fixed;
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  font-size: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffd700, #caa400);
+  color: #000;
+  border: 4px solid #fff;
+  display: none;
+  z-index: 6000;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#action-trigger:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 0 28px rgba(255, 215, 0, 1);
+}
+
+#action-trigger:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* ================================
+MODALS
+================================ */
+
+.full-modal {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 10000;
+  padding: 20px;
+  overflow-y: auto;
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.close-x {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================================
+BUTTONS
+================================ */
+
+.win-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: var(--gold);
+  color: #000;
+}
+
+.mcq-btn {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ================================
+MODE GRID
+================================ */
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.m-tile {
+  background: #111;
+  border: 1px solid #333;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.m-tile:hover {
+  background: #222;
+}
+
+/* ================================
+START SCREEN
+================================ */
+
+.start-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.start-card {
+  background: #111;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.pill-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.pill {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pill.active {
+  background: var(--gold);
+  color: #000;
+}
+
+/* ================================
+SETTINGS
+================================ */
+
+.settings-card {
+  background: #111;
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.settings-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* ================================
+BANNERS
+================================ */
+
+.zone-banner {
+  background: #111;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.boss-banner {
+  background: #3a0000;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ================================
+PLAYER STATUS
+================================ */
+
+.hp-status {
+  margin-left: 6px;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.hp-on {
+  background: #2ecc71;
+  color: #000;
+}
+
+.hp-off {
+  background: #555;
+}
+
+/* ================================
+MARKERS
+================================ */
+
+.marker-logo {
+  text-align: center;
+}
+
+/* ================================
+NIGHT MODE
+================================ */
+
+.night-vision {
+  filter: hue-rotate(140deg) brightness(0.8);
+}
+
+/* ================================
+REWARD FX
+================================ */
+
+#reward-fx-layer {
+  pointer-events: none;
+}
