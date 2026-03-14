@@ -166,7 +166,7 @@ button {
   position: fixed;
   inset: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url("./images/images-monk.png") center/cover no-repeat;
+    url("./images/image-monk.png") center/cover no-repeat;
   z-index: 10000;
   padding: 20px;
   overflow-y: auto;
